@@ -642,6 +642,63 @@
       font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     }
 
+  
+    .image-lightbox-link {
+      display: inline-block;
+      cursor: zoom-in;
+    }
+
+    .image-lightbox-link img {
+      transition: transform 0.18s ease, filter 0.18s ease;
+    }
+
+    .image-lightbox-link:hover img {
+      transform: scale(1.02);
+      filter: drop-shadow(0 16px 32px rgba(13, 17, 16, 0.16));
+    }
+
+    .image-lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 28px;
+      background: rgba(13, 17, 16, 0.72);
+      backdrop-filter: blur(6px);
+    }
+
+    .image-lightbox.active {
+      display: flex;
+    }
+
+    .image-lightbox img {
+      max-width: min(94vw, 1100px);
+      max-height: 88vh;
+      width: auto;
+      height: auto;
+      border-radius: 22px;
+      background: white;
+      box-shadow: 0 28px 80px rgba(0, 0, 0, 0.28);
+    }
+
+    .image-lightbox button {
+      position: fixed;
+      top: 22px;
+      right: 24px;
+      width: 44px;
+      height: 44px;
+      border: 0;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.94);
+      color: #0d1110;
+      font-size: 28px;
+      line-height: 1;
+      cursor: pointer;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+    }
+
   </style>
 </head>
 <body>
@@ -776,7 +833,7 @@
               <div class="feature-media-row">
                 <p>I understand this role is about more than being good with people. It means running clear demos, following up consistently, learning the product deeply, handling objections, being comfortable hearing no, and helping prospects move from interest to a decision. I may not come from a traditional SaaS sales background, but I am coachable, practical, and ready to prove I can learn the Cleer sales process quickly.</p>
                 <div class="feature-visual sales-motion" aria-label="Ready to Learn the Sales Motion graphic">
-                  <img src="./ready-sales-motion-side.png" alt="Graphic showing the steps in a sales motion from demos to shaping the playbook">
+                  <a class="image-lightbox-link" href="./ready-sales-motion-side.png" aria-label="Open Ready to Learn the Sales Motion image larger"><img src="./ready-sales-motion-side.png" alt="Graphic showing the steps in a sales motion from demos to shaping the playbook"></a>
                 </div>
               </div>
               <div class="quote">The goal is to combine real-world customer empathy with a focused, coachable approach to sales.</div>
@@ -902,5 +959,43 @@
       });
     });
   </script>
+
+  <div class="image-lightbox" id="imageLightbox" aria-hidden="true">
+    <button type="button" id="imageLightboxClose" aria-label="Close larger image">×</button>
+    <img id="imageLightboxImg" src="" alt="">
+  </div>
+
+  <script>
+    document.querySelectorAll('.image-lightbox-link').forEach(function(link) {
+      link.addEventListener('click', function(event) {
+        event.preventDefault();
+        const lightbox = document.getElementById('imageLightbox');
+        const lightboxImg = document.getElementById('imageLightboxImg');
+        const img = link.querySelector('img');
+
+        lightboxImg.src = link.getAttribute('href');
+        lightboxImg.alt = img ? img.alt : 'Expanded image';
+        lightbox.classList.add('active');
+        lightbox.setAttribute('aria-hidden', 'false');
+      });
+    });
+
+    function closeImageLightbox() {
+      const lightbox = document.getElementById('imageLightbox');
+      const lightboxImg = document.getElementById('imageLightboxImg');
+      lightbox.classList.remove('active');
+      lightbox.setAttribute('aria-hidden', 'true');
+      lightboxImg.src = '';
+    }
+
+    document.getElementById('imageLightboxClose').addEventListener('click', closeImageLightbox);
+    document.getElementById('imageLightbox').addEventListener('click', function(event) {
+      if (event.target === this) closeImageLightbox();
+    });
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'Escape') closeImageLightbox();
+    });
+  </script>
+
 </body>
 </html>
