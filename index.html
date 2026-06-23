@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hire.Amal for Cleer | Account Executive Candidate</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <meta name="description" content="A Cleer-inspired candidate landing page for Hire.Amal, tailored to Cleer's Account Executive role." />
+  <style>
+    :root {
+      --ink: #0d1110;
+      --muted: #5f6663;
+      --muted-2: #7b8580;
+      --line: rgba(13, 17, 16, 0.10);
+      --line-strong: rgba(13, 17, 16, 0.16);
+      --bg: #fbfbf8;
+      --panel: rgba(255, 255, 255, 0.82);
+      --white: #ffffff;
+      --blue: #dcecff;
+      --blue-strong: #b9d7ff;
+      --pink: #f8dfdf;
+      --pink-strong: #f1c9c7;
+      --cream: #f6f1e8;
+      --green: #dff4e6;
+      --dark: #101513;
+      --shadow: 0 24px 80px rgba(13, 17, 16, 0.08);
+      --shadow-soft: 0 16px 44px rgba(13, 17, 16, 0.06);
+      --radius-xl: 34px;
+      --radius-lg: 24px;
+      --radius-md: 16px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 12% 2%, rgba(185, 215, 255, 0.78), transparent 33%),
+        radial-gradient(circle at 88% 4%, rgba(241, 201, 199, 0.82), transparent 31%),
+        linear-gradient(180deg, #fbfbf8 0%, #f8f8f4 52%, #ffffff 100%);
+      line-height: 1.5;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    .wrap { width: min(1160px, calc(100% - 36px)); margin: 0 auto; }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(20px);
+      background: rgba(251, 251, 248, 0.76);
+      border-bottom: 1px solid rgba(13, 17, 16, 0.08);
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 15px 0;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 72px;
+      font-weight: 760;
+      letter-spacing: -0.04em;
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+
+    .brand img {
+      height: 28px;
+      width: auto;
+      display: block;
+      flex-shrink: 0;
+    }
+
+    .brand span {
+      font-size: 28px;
+      line-height: 1;
+      font-weight: 500;
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 650;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      border-radius: 999px;
+      padding: 12px 18px;
+      border: 1px solid transparent;
+      font-size: 14px;
+      font-weight: 760;
+      letter-spacing: -0.01em;
+      transition: transform 160ms ease, background 160ms ease, border-color 160ms ease, box-shadow 160ms ease;
+      white-space: nowrap;
+    }
+
+    .btn:hover { transform: translateY(-1px); }
+    .btn-primary {
+      background: var(--dark);
+      color: #fff;
+      box-shadow: 0 18px 38px rgba(13, 17, 16, 0.18);
+    }
+    .btn-primary:hover { background: #000; }
+    .btn-secondary {
+      background: rgba(255,255,255,0.72);
+      border-color: var(--line-strong);
+      color: var(--dark);
+    }
+    .btn-soft {
+      background: rgba(255,255,255,0.54);
+      border-color: rgba(13, 17, 16, 0.10);
+      color: var(--dark);
+    }
+
+    .hero {
+      padding: 70px 0 42px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 38px;
+      align-items: center;
+    }
+
+    .eyebrow, .pill {
+      display: inline-flex;
+      align-items: center;
+      width: fit-content;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.60);
+      border: 1px solid rgba(13, 17, 16, 0.10);
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 760;
+      letter-spacing: -0.01em;
+      box-shadow: 0 8px 30px rgba(13, 17, 16, 0.04);
+    }
+
+    h1, h2, h3, p { margin-top: 0; }
+    h1 {
+      margin: 18px 0 20px;
+      font-size: clamp(48px, 8vw, 86px);
+      line-height: 0.92;
+      letter-spacing: -0.085em;
+      max-width: 760px;
+    }
+
+    .hero-copy {
+      color: var(--muted);
+      font-size: 19px;
+      max-width: 650px;
+      margin-bottom: 26px;
+    }
+
+    .hero-top {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 6px;
+      flex-wrap: wrap;
+    }
+
+    .hero-photo {
+      width: 76px;
+      height: 76px;
+      border-radius: 18px;
+      object-fit: cover;
+      border: 3px solid rgba(255,255,255,0.78);
+      box-shadow: 0 10px 24px rgba(13, 17, 16, 0.10);
+      display: block;
+    }
+
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+
+    .chips {
+      margin-top: 28px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .chip {
+      padding: 9px 12px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.66);
+      border: 1px solid rgba(13, 17, 16, 0.10);
+      font-size: 13px;
+      font-weight: 720;
+      color: #333936;
+      box-shadow: 0 8px 24px rgba(13, 17, 16, 0.035);
+    }
+
+    .hero-card {
+      background: rgba(255, 255, 255, 0.72);
+      border: 1px solid rgba(13, 17, 16, 0.10);
+      border-radius: var(--radius-xl);
+      padding: 22px;
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-card:before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 0% 0%, rgba(220, 236, 255, 0.82), transparent 42%),
+        radial-gradient(circle at 100% 0%, rgba(248, 223, 223, 0.80), transparent 40%);
+      z-index: 0;
+    }
+
+    .hero-card > * { position: relative; z-index: 1; }
+
+    .product-window {
+      background: rgba(255, 255, 255, 0.90);
+      border: 1px solid rgba(13, 17, 16, 0.10);
+      border-radius: 26px;
+      padding: 18px;
+    }
+
+    .window-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid rgba(13, 17, 16, 0.08);
+    }
+
+    .window-title { font-weight: 860; letter-spacing: -0.04em; font-size: 20px; margin: 0; }
+    .window-sub { color: var(--muted); margin: 2px 0 0; font-size: 13px; }
+    .status {
+      border-radius: 999px;
+      background: var(--green);
+      padding: 7px 10px;
+      font-weight: 800;
+      font-size: 12px;
+      color: #244634;
+      white-space: nowrap;
+    }
+
+    .workflow {
+      display: grid;
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .workflow-row {
+      display: grid;
+      grid-template-columns: 38px 1fr;
+      gap: 12px;
+      align-items: start;
+      padding: 14px;
+      border-radius: 18px;
+      background: #fbfbf8;
+      border: 1px solid rgba(13, 17, 16, 0.08);
+    }
+
+    .step {
+      width: 38px;
+      height: 38px;
+      border-radius: 999px;
+      background: var(--dark);
+      color: #fff;
+      display: grid;
+      place-items: center;
+      font-size: 13px;
+      font-weight: 850;
+    }
+
+    .workflow-row strong { display: block; letter-spacing: -0.02em; margin-bottom: 3px; }
+    .workflow-row span { color: var(--muted); font-size: 14px; }
+
+    .callout {
+      margin-top: 14px;
+      padding: 16px;
+      border-radius: 20px;
+      background: rgba(13, 17, 16, 0.92);
+      color: #fff;
+    }
+    .callout strong { display: block; letter-spacing: -0.02em; }
+    .callout p { margin: 5px 0 0; color: rgba(255,255,255,0.72); font-size: 14px; }
+
+    section { padding: 54px 0; }
+    .section-head { max-width: 790px; margin-bottom: 24px; }
+    h2 {
+      font-size: clamp(34px, 5vw, 58px);
+      line-height: 0.98;
+      letter-spacing: -0.075em;
+      margin: 12px 0 12px;
+    }
+    .section-head p { color: var(--muted); font-size: 18px; margin-bottom: 0; }
+
+    .feature-shell {
+      display: grid;
+      grid-template-columns: 0.72fr 1.28fr;
+      gap: 18px;
+      align-items: start;
+    }
+
+    .feature-tabs {
+      display: grid;
+      gap: 10px;
+      position: sticky;
+      top: 84px;
+    }
+
+    .feature-tab {
+      border: 1px solid rgba(13, 17, 16, 0.10);
+      background: rgba(255,255,255,0.64);
+      border-radius: 18px;
+      padding: 14px 15px;
+      text-align: left;
+      font: inherit;
+      color: var(--muted);
+      cursor: pointer;
+      font-weight: 760;
+      letter-spacing: -0.02em;
+      transition: background 160ms ease, transform 160ms ease, color 160ms ease, border-color 160ms ease;
+    }
+
+    .feature-tab:hover { transform: translateY(-1px); color: var(--ink); }
+    .feature-tab.active {
+      background: var(--dark);
+      color: #fff;
+      border-color: var(--dark);
+      box-shadow: 0 14px 35px rgba(13, 17, 16, 0.16);
+    }
+
+    .feature-panel {
+      display: none;
+      min-height: 480px;
+      background:
+        radial-gradient(circle at 0% 0%, rgba(220, 236, 255, 0.75), transparent 34%),
+        radial-gradient(circle at 100% 0%, rgba(248, 223, 223, 0.68), transparent 32%),
+        rgba(255, 255, 255, 0.76);
+      border: 1px solid rgba(13, 17, 16, 0.10);
+      border-radius: var(--radius-xl);
+      padding: clamp(24px, 4vw, 42px);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .feature-panel.active { display: block; }
+    .feature-panel h3 {
+      font-size: clamp(30px, 4vw, 48px);
+      line-height: 0.98;
+      letter-spacing: -0.065em;
+      margin-bottom: 16px;
+    }
+    .feature-panel p {
+      color: var(--muted);
+      font-size: 18px;
+      max-width: 780px;
+      margin-bottom: 0;
+    }
+    .feature-panel .quote {
+      margin-top: 24px;
+      padding: 18px;
+      border-radius: 22px;
+      background: rgba(255,255,255,0.78);
+      border: 1px solid rgba(13, 17, 16, 0.08);
+      color: var(--ink);
+      font-weight: 720;
+      max-width: 760px;
+    }
+
+
+
+    
+    .feature-media-row {
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(220px, 0.85fr);
+      gap: 28px;
+      align-items: center;
+      margin-top: 8px;
+      margin-bottom: 18px;
+    }
+
+    .feature-media-row p {
+      margin: 0;
+    }
+
+    .feature-visual {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .feature-visual img {
+      display: block;
+      width: min(100%, 320px);
+      height: auto;
+      filter: drop-shadow(0 10px 24px rgba(13, 17, 16, 0.08));
+    }
+
+    .feature-visual.unconventional img { width: min(100%, 280px); }
+    .feature-visual.relatable img { width: min(100%, 320px); border-radius: 18px; }
+    .feature-visual.demos img { width: min(100%, 290px); }
+    .feature-visual.sales-motion img { width: min(100%, 680px); }
+    .feature-visual.startup img { width: min(100%, 620px); }
+    .feature-visual.simple img { width: min(100%, 520px); }
+
+    .feature-visual.belief .belief-logo-row {
+      margin: 0;
+      padding: 0;
+      justify-content: center;
+    }
+
+    @media (max-width: 860px) {
+      .feature-media-row {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .unconventional-row {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(220px, 0.9fr);
+      gap: 28px;
+      align-items: center;
+      margin-top: 8px;
+      margin-bottom: 16px;
+    }
+
+    .unconventional-row p {
+      margin: 0;
+    }
+
+    .unconventional-visual {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .unconventional-visual img {
+      display: block;
+      width: min(100%, 300px);
+      height: auto;
+      filter: drop-shadow(0 10px 24px rgba(13, 17, 16, 0.08));
+    }
+
+    @media (max-width: 860px) {
+      .unconventional-row {
+        grid-template-columns: 1fr;
+      }
+
+      .unconventional-visual {
+        order: 2;
+      }
+    }
+
+    .belief-logo-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: clamp(24px, 5vw, 58px);
+      flex-wrap: wrap;
+      margin: 26px 0 2px;
+      padding: 12px 0;
+    }
+
+    .belief-logo-row img {
+      display: block;
+      width: auto;
+      object-fit: contain;
+      filter: drop-shadow(0 8px 20px rgba(13, 17, 16, 0.08));
+    }
+
+    .belief-logo-row .shopify-logo {
+      height: clamp(44px, 6vw, 68px);
+      max-width: 280px;
+    }
+
+    .belief-logo-row .cleer-logo {
+      height: clamp(50px, 7vw, 76px);
+      max-width: 230px;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.76);
+      border: 1px solid rgba(13, 17, 16, 0.10);
+      border-radius: var(--radius-lg);
+      padding: 22px;
+      box-shadow: 0 14px 40px rgba(13, 17, 16, 0.05);
+    }
+
+    .card-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, var(--blue), var(--pink));
+      display: grid;
+      place-items: center;
+      font-weight: 880;
+      margin-bottom: 18px;
+    }
+    .card h3 { font-size: 20px; letter-spacing: -0.04em; margin-bottom: 8px; }
+    .card p { color: var(--muted); margin-bottom: 0; }
+
+    .proof-strip {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+    .proof {
+      background: var(--dark);
+      color: #fff;
+      border-radius: 24px;
+      padding: 22px;
+      min-height: 148px;
+      box-shadow: 0 18px 40px rgba(13, 17, 16, 0.10);
+    }
+    .proof .num {
+      font-size: 38px;
+      line-height: 1;
+      font-weight: 900;
+      letter-spacing: -0.07em;
+      margin-bottom: 10px;
+    }
+    .proof p { color: rgba(255,255,255,0.72); margin: 0; font-weight: 620; }
+
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      align-items: stretch;
+    }
+
+    .soft-panel, .dark-panel {
+      border-radius: var(--radius-xl);
+      padding: clamp(24px, 4vw, 38px);
+      border: 1px solid rgba(13, 17, 16, 0.10);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .soft-panel {
+      background:
+        radial-gradient(circle at 0% 0%, rgba(220, 236, 255, 0.68), transparent 40%),
+        rgba(255,255,255,0.76);
+    }
+    .dark-panel { background: var(--dark); color: #fff; }
+    .dark-panel p { color: rgba(255,255,255,0.72); }
+
+    .bullet-list {
+      display: grid;
+      gap: 12px;
+      margin-top: 20px;
+    }
+    .bullet {
+      display: grid;
+      grid-template-columns: 34px 1fr;
+      gap: 12px;
+      align-items: start;
+      padding: 14px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.72);
+      border: 1px solid rgba(13, 17, 16, 0.08);
+    }
+    .dark-panel .bullet { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.10); }
+    .tick {
+      width: 34px;
+      height: 34px;
+      border-radius: 999px;
+      display: grid;
+      place-items: center;
+      background: var(--dark);
+      color: #fff;
+      font-weight: 900;
+    }
+    .dark-panel .tick { background: #fff; color: var(--dark); }
+    .bullet strong { display: block; margin-bottom: 2px; letter-spacing: -0.02em; }
+    .bullet span { color: var(--muted); font-size: 14px; }
+    .dark-panel .bullet span { color: rgba(255,255,255,0.68); }
+
+    .cta {
+      border-radius: 38px;
+      padding: clamp(28px, 5vw, 48px);
+      background:
+        radial-gradient(circle at 0% 0%, rgba(220, 236, 255, 0.85), transparent 36%),
+        radial-gradient(circle at 100% 0%, rgba(248, 223, 223, 0.92), transparent 38%),
+        #fff;
+      border: 1px solid rgba(13, 17, 16, 0.10);
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 22px;
+      align-items: center;
+      box-shadow: var(--shadow);
+    }
+    .cta h2 { margin: 0 0 10px; }
+    .cta p { color: var(--muted); font-size: 18px; margin: 0; max-width: 740px; }
+
+    footer {
+      padding: 34px 0 46px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    footer .wrap {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+      border-top: 1px solid rgba(13,17,16,0.10);
+      padding-top: 22px;
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid, .feature-shell, .split, .cta { grid-template-columns: 1fr; }
+      .hero-photo { width: 68px; height: 68px; }
+      .feature-tabs { position: relative; top: auto; grid-template-columns: repeat(2, 1fr); }
+      .grid-3 { grid-template-columns: 1fr; }
+      .proof-strip { grid-template-columns: repeat(2, 1fr); }
+      .nav-links a:not(.btn) { display: none; }
+    }
+
+    @media (max-width: 620px) {
+      .wrap { width: min(100% - 28px, 1160px); }
+      .hero { padding-top: 46px; }
+      .feature-tabs { grid-template-columns: 1fr; }
+      .proof-strip { grid-template-columns: 1fr; }
+      h1 { font-size: clamp(42px, 14vw, 64px); }
+      .nav-links .btn { padding: 11px 14px; }
+    }
+  
+    body, button, input, textarea, select {
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <nav>
+        <a class="brand" href="#top" aria-label="Hire.Amal home">
+          <img src="./cleer-logo-transparent.png" alt="Cleer logo">
+          <span>Hire.Amal</span>
+        </a>
+        <div class="nav-links">
+          <a href="#features">Features</a>
+          <a href="#proof">Proof</a>
+          <a class="btn btn-primary" href="https://mail.google.com/mail/?view=cm&fs=1&to=amalrashid%40gmail.com&su=Book%20a%20demo%20with%20Amal%20Rashid&body=Hi%20Amal%2C%0A%0AI%E2%80%99d%20love%20to%20book%20a%20short%20conversation.%0A%0ABest%2C" target="_blank" rel="noopener">Book a demo</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <span class="eyebrow">Account Executive candidate</span>
+          <h1>Helping Cleer grow, one trusted demo at a time.</h1>
+          <p class="hero-copy">I’m not your conventional hire. I’m someone who understands people, busy offices, nervous software users, and the kind of careful follow-through that turns interest into trust.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://mail.google.com/mail/?view=cm&fs=1&to=amalrashid%40gmail.com&su=Book%20a%20demo%20with%20Amal%20Rashid&body=Hi%20Amal%2C%0A%0AI%E2%80%99d%20love%20to%20book%20a%20short%20conversation.%0A%0ABest%2C" target="_blank" rel="noopener">Book a demo with Amal</a>
+            <a class="btn btn-secondary" href="./resume.html" target="_blank" rel="noopener">View resume</a>
+          </div>
+          <div class="chips" aria-label="Key strengths">
+            <span class="chip">Daily product demos</span>
+            <span class="chip">Clinic front desk experience</span>
+            <span class="chip">Warm first impression</span>
+            <span class="chip">Startup-aware</span>
+          </div>
+        </div>
+
+        <aside class="hero-card" aria-label="Cleer-style demo flow">
+          <div class="product-window">
+            <div class="window-top">
+              <div>
+                <p class="window-title">Demo flow</p>
+                <p class="window-sub">Simple, warm, and easy to understand.</p>
+              </div>
+            </div>
+            <div class="workflow">
+              <div class="workflow-row">
+                <div class="step">1</div>
+                <div><strong>Meet the user where they are.</strong><span>Ask what slows them down and listen before jumping into the product.</span></div>
+              </div>
+              <div class="workflow-row">
+                <div class="step">2</div>
+                <div><strong>Explain without overwhelming.</strong><span>Turn new software into plain language, practical examples, and clear steps.</span></div>
+              </div>
+              <div class="workflow-row">
+                <div class="step">3</div>
+                <div><strong>Keep the next step moving.</strong><span>Follow up with care, document questions, and help Cleer learn from every conversation.</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="callout">
+            <strong>The fit: human support for a software company solving a real admin problem.</strong>
+            <p>Cleer gives offices time back. I can help users feel comfortable enough to actually adopt it.</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="features">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Why Amal makes sense for Cleer.</h2>
+          <p>Clickable-style tabs for the website, focused on the parts of Amal’s story that matter most for customer success, onboarding, and early sales.</p>
+        </div>
+
+        <div class="feature-shell">
+          <div class="feature-tabs" role="tablist" aria-label="Amal feature tabs">
+            <button class="feature-tab active" type="button" data-tab="believe">Why I Believe in Cleer</button>
+            <button class="feature-tab" type="button" data-tab="unconventional">An Unconventional Strength</button>
+            <button class="feature-tab" type="button" data-tab="relatable">Relatable to Cleer’s Users</button>
+            <button class="feature-tab" type="button" data-tab="demos">Patient, Practical Demos</button>
+            <button class="feature-tab" type="button" data-tab="sales-motion">Ready to Learn the Sales Motion</button>
+            <button class="feature-tab" type="button" data-tab="simple">Making New Tools Feel Simple</button>
+            <button class="feature-tab" type="button" data-tab="startup">Aligned With Startup Reality</button>
+          </div>
+
+          <div>
+            <article class="feature-panel active" id="believe">
+              <h3>Why I Believe in Cleer</h3>
+              <p>I first saw Cleer pitch at Rally Day in September 2025 and was impressed by how much traction they already had as a young startup. Before Shopify went public, I was hired to join their customer service team, but chose to stay home with my children at the time. Cleer gives me that same early feeling: a company solving a real problem, moving quickly, and building something with real potential. I would love the opportunity to be part of that journey and help contribute to Cleer’s growth and success.</p>
+              <div class="belief-logo-row" aria-label="Shopify and Cleer logos">
+                <img class="shopify-logo" src="./shopify-logo-transparent.png" alt="Shopify logo">
+                <img class="cleer-logo" src="./cleer-logo-transparent.png" alt="Cleer logo">
+              </div>
+              <div class="quote">I recognize that early energy, and I want to be part of it.</div>
+            </article>
+
+            <article class="feature-panel" id="unconventional">
+              <h3>An Unconventional Strength</h3>
+              <div class="feature-media-row">
+                <p>I am not a conventional hire, and I see that as one of my strengths. I have spent much of my life raising a family, building side projects, and working in customer-facing roles, which gives me a grounded, practical understanding of people and how to support them.</p>
+                <div class="feature-visual unconventional" aria-label="An unconventional strength graphic">
+                  <img src="./unconventional-ant-only.png" alt="An ant lifting a heavy barbell">
+                </div>
+              </div>
+              <div class="quote">Real-world experience, patience, and common sense are not always obvious on a traditional resume, but they matter in customer conversations.</div>
+            </article>
+
+            <article class="feature-panel" id="relatable">
+              <h3>Relatable to Cleer’s Users</h3>
+              <div class="feature-media-row">
+                <p>I may not have the exact conventional path, but I have the raw ingredients Cleer needs: communication, patience, trust-building, demo confidence, follow-through, and comfort starting from scratch. I would be selling to customers who are a lot like me, which means I understand how to make new software feel approachable and not intimidating.</p>
+                <div class="feature-visual relatable" aria-label="Photo of Amal Rashid">
+                  <img src="./amal-relatable-photo.png" alt="Photo of Amal Rashid">
+                </div>
+              </div>
+              <div class="quote">The goal is not just to show the software. It is to make the person on the other side feel like they can actually use it.</div>
+            </article>
+
+            <article class="feature-panel" id="demos">
+              <h3>Patient, Practical Demos</h3>
+              <div class="feature-media-row">
+                <p>I have experience walking people through new products in a way that feels clear and approachable. At Malenka Originals, I gave daily demos and learned how to explain each step simply, answer questions patiently, and help customers feel confident using something new.</p>
+                <div class="feature-visual demos" aria-label="Patient, Practical Demos graphic">
+                  <img src="./patient-practical-demo-side.png" alt="Comic-style woman presenting Cleer information on a flip chart">
+                </div>
+              </div>
+              <div class="quote">A good demo should feel like help, not a script.</div>
+            </article>
+
+            <article class="feature-panel" id="sales-motion">
+              <h3>Ready to Learn the Sales Motion</h3>
+              <div class="feature-media-row">
+                <p>I understand this role is about more than being good with people. It means running clear demos, following up consistently, learning the product deeply, handling objections, being comfortable hearing no, and helping prospects move from interest to a decision. I may not come from a traditional SaaS sales background, but I am coachable, practical, and ready to prove I can learn the Cleer sales process quickly.</p>
+                <div class="feature-visual sales-motion" aria-label="Ready to Learn the Sales Motion graphic">
+                  <img src="./ready-sales-motion-side.png" alt="Graphic showing the steps in a sales motion from demos to shaping the playbook">
+                </div>
+              </div>
+              <div class="quote">The goal is to combine real-world customer empathy with a focused, coachable approach to sales.</div>
+            </article>
+
+            <article class="feature-panel" id="simple">
+              <h3>Making New Tools Feel Simple</h3>
+              <div class="feature-media-row">
+                <p>I have spent years helping people understand things that are new to them. New software can feel overwhelming at first. My strength is slowing things down, untangling the confusion, and making the next step feel simple.</p>
+                <div class="feature-visual simple" aria-label="Making New Tools Feel Simple graphic">
+                  <img src="./making-tools-simple.png" alt="Chaos turning into order graphic on a transparent background">
+                </div>
+              </div>
+              <div class="quote">For users who are nervous about new software, simple language and patience can be the difference between interest and adoption.</div>
+            </article>
+
+            <article class="feature-panel" id="startup">
+              <h3>Aligned With Startup Reality</h3>
+              <div class="feature-media-row">
+                <p>I am exactly the kind of person Cleer needs: adaptable, practical, coachable, and ready to grow as Cleer grows. I am comfortable starting at $50K rather than the listed $70K, with the opportunity to earn the rest as I prove my value, help convert interest into customers, and contribute to Cleer’s growth and success.</p>
+                <div class="feature-visual startup" aria-label="Aligned With Startup Reality graphic">
+                  <img src="./startup-reality-money.png" alt="Startup runway comic graphic">
+                </div>
+              </div>
+              <div class="quote">I understand that in the early days of a startup, family and friends may have stepped in simply because they believe in the vision. I also understand that every dollar matters, so I am flexible on salary while I prove my value and help Cleer grow and succeed.</div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="proof">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Experience that maps directly to onboarding and customer trust.</h2>
+        </div>
+        <div class="proof-strip">
+          <div class="proof"><div class="num">15+</div><p>years of direct customer service and public-facing communication.</p></div>
+          <div class="proof"><div class="num">Daily</div><p>product demos at Malenka Originals, helping customers understand and use the product.</p></div>
+          <div class="proof"><div class="num">15+</div><p>years in retail, managing clinic reception, scheduling, payments, and customer interactions.</p></div>
+          <div class="proof"><div class="num">BSc</div><p>Honours Biology plus regulated research experience and careful documentation habits.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap grid-3">
+        <article class="card">
+          <div class="card-icon">1</div>
+          <h3>Calm Under Pressure</h3>
+          <p>I have worked in busy clinics, retail spaces, reception desks, and customer-facing roles where people often needed patience and reassurance. I know how to stay calm, listen properly, and make people feel looked after.</p>
+        </article>
+        <article class="card">
+          <div class="card-icon">2</div>
+          <h3>Detail-Oriented Without Being Robotic</h3>
+          <p>I am comfortable with scheduling, records, payments, spreadsheets, inventory, follow-ups, and daily reconciliation. I like keeping things organized, but I also know how to keep the human side of the interaction front and centre.</p>
+        </article>
+        <article class="card">
+          <div class="card-icon">3</div>
+          <h3>Entrepreneurial in Real Life</h3>
+          <p>I have managed my own wellness practice, rental properties, local honey sales, and other side projects. I know what it means to figure things out, take initiative, solve problems, and keep things moving.</p>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap split">
+        <div class="soft-panel">
+          <h2>A warm first voice for a practical product.</h2>
+          <p>Cleer’s product saves time, but adoption still depends on trust. My strength is making the person on the other side feel empowered and capable, not overwhelmed.</p>
+          <div class="bullet-list">
+            <div class="bullet"><div class="tick">✓</div><div><strong>Friendly discovery</strong><span>Start with the customer’s actual day, not a canned pitch.</span></div></div>
+            <div class="bullet"><div class="tick">✓</div><div><strong>Simple explanation</strong><span>Turn features into examples that feel familiar and useful.</span></div></div>
+            <div class="bullet"><div class="tick">✓</div><div><strong>Comfortable follow-up</strong><span>Keep momentum without making people feel pressured.</span></div></div>
+          </div>
+        </div>
+
+        <div class="dark-panel">
+          <h2>Not a copy-paste SaaS hire. A person Cleer can shape early.</h2>
+          <p>I may not have the exact conventional path, but I have the raw ingredients Cleer needs: flexible, easy to talk to, patient, trust-building, demo confidence, follow-through, and comfort starting from scratch. I would be selling to customers who are a lot like me, which means I understand how to make new software feel approachable and not intimidating.</p>
+          <div class="bullet-list">
+            <div class="bullet"><div class="tick">✓</div><div><strong>Understands busy admin users</strong><span>Clinic, reception, scheduling, payments, and daily customer pressure.</span></div></div>
+            <div class="bullet"><div class="tick">✓</div><div><strong>Can make the software feel human</strong><span>Especially for users who are hesitant, tired, or intimidated by new systems.</span></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="demo">
+      <div class="wrap">
+        <div class="cta">
+          <div>
+            <h2>Book a demo with Amal.</h2>
+            <p>A short conversation to get to know Amal as a person, hear how she thinks, and see whether her warmth, experience, and practical approach would be a strong fit for Cleer’s team and culture.</p>
+          </div>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://mail.google.com/mail/?view=cm&fs=1&to=amalrashid%40gmail.com&su=Book%20a%20demo%20with%20Amal%20Rashid&body=Hi%20Amal%2C%0A%0AI%E2%80%99d%20love%20to%20book%20a%20short%20conversation.%0A%0ABest%2C" target="_blank" rel="noopener">Email Amal</a>
+            <a class="btn btn-secondary" href="./resume.html" target="_blank" rel="noopener">Resume PDF</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div>Amal Rashid · Ottawa, Ontario · 613-862-9276 · amalrashid@gmail.com</div>
+      <div>Candidate landing page inspired by Cleer’s clean, product-led style.</div>
+    </div>
+  </footer>
+
+  <script>
+    const tabs = document.querySelectorAll('.feature-tab');
+    const panels = document.querySelectorAll('.feature-panel');
+
+    tabs.forEach((tab) => {
+      tab.addEventListener('click', () => {
+        const target = tab.getAttribute('data-tab');
+        tabs.forEach((item) => item.classList.remove('active'));
+        panels.forEach((panel) => panel.classList.remove('active'));
+        tab.classList.add('active');
+        document.getElementById(target).classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>
